@@ -1,43 +1,11 @@
 {
-  "name": "@piber/rollup-js",
-  "version": "0.1.0",
-  "description": "Starter template for building JS libraries using Rollup",
-  "keywords": [
-    "rollup",
-    "javascript",
-    "library",
-    "esm"
-  ],
-  "license": "MIT",
   "author": "Maurício Piber Fão (https://github.com/mauriciopiber)",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "import": "./dist/esm/src/index.js",
-      "require": "./dist/cjs/src/index.js"
-    }
-  },
-  "main": "./dist/cjs/src/index.js",
-  "module": "./dist/esm/src/index.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build-storybook": "storybook build",
-    "build:cjs": "rollup -c rollup.config.cjs.mjs",
-    "build:esm": "rollup -c rollup.config.esm.mjs",
-    "format": "prettier --write src",
-    "lint": "eslint --ignore-path .gitignore --fix src",
-    "prepare": "husky install",
-    "storybook": "storybook dev -p 6006"
-  },
   "dependencies": {
     "@babel/runtime": "^7.25.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.40"
   },
+  "description": "Starter template for building JS libraries using Rollup",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@rollup/plugin-alias": "^5.1.0",
@@ -66,16 +34,53 @@
     "storybook": "^8.2.6",
     "tailwindcss": "^3.4.7"
   },
-  "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0 || ^18.2.0",
-    "react-dom": "^16.14.0 || ^17.0.0 || ^18.2.0"
-  },
   "engines": {
     "node": ">=16.0.0 || >=18.0.0 || >=19.0.0 || >=20.0.0"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/src/index.js",
+      "require": "./dist/cjs/src/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "rollup",
+    "javascript",
+    "library",
+    "esm"
+  ],
+  "license": "MIT",
+  "main": "./dist/cjs/src/index.js",
+  "module": "./dist/esm/src/index.js",
+  "name": "@piber/rollup-react",
   "overrides": {
     "rollup-plugin-preserve-directives": {
       "rollup": "^4.7.0"
     }
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.14.0 || ^17.0.0 || ^18.2.0",
+    "react-dom": "^16.14.0 || ^17.0.0 || ^18.2.0"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mauriciopiber/rollup-react.git"
+  },
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build-storybook": "storybook build",
+    "build:cjs": "rollup -c rollup.config.cjs.mjs",
+    "build:esm": "rollup -c rollup.config.esm.mjs",
+    "format": "prettier --write src",
+    "lint": "eslint --ignore-path .gitignore --fix src",
+    "prebuild": "rm -rf dist",
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006"
+  },
+  "sideEffects": false,
+  "version": "0.1.0"
 }
