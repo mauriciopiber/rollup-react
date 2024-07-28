@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/esm" /* Specify an output folder for all emitted files. */,
+    "declarationDir": "dist/esm/types" /* Specify the output directory for generated declaration files. */
+  }
+}
